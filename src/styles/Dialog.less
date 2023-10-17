@@ -1,37 +1,5 @@
 @import 'common.less';
 
 .oo-ui-dialog {
-	&-content {
-		> .oo-ui-window {
-			&-head,
-			&-body,
-			&-foot {
-				position: absolute;
-				left: 0;
-				right: 0;
-				box-sizing: border-box;
-			}
-
-			&-head {
-				overflow: hidden;
-				z-index: 3;
-				top: 0;
-			}
-
-			&-body {
-				overflow: auto;
-				-webkit-overflow-scrolling: touch;
-				z-index: 2;
-				top: 0;
-				bottom: 0;
-			}
-
-			&-foot {
-				z-index: 3;
-				bottom: 0;
-			}
-		}
-	}
-
 	.theme-oo-ui-dialog();
 }

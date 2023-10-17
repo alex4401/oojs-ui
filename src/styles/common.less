@@ -13,9 +13,7 @@
 // Can be used in order to help establish smooth, jank-free scrolling
 // in connection with CSS animations or tame `opacity` bug. Use sparely & wisely!
 // See T154460 & T182257.
-.oo-ui-force-gpu-composite-layer() {
-	transform: translateZ( 0 );
-}
+.oo-ui-force-gpu-composite-layer() {}
 
 .oo-ui-horizontal-gradient( @startColor: #eee, @endColor: #fff, @startPos: 0, @endPos: 100% ) {
 	background-color: average( @startColor, @endColor );
@@ -27,38 +25,14 @@
 	background-image: linear-gradient( to bottom, @startColor @startPos, @endColor @endPos );
 }
 
-.oo-ui-unselectable() {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
+.oo-ui-unselectable() {}
 
-.oo-ui-selectable() {
-	-webkit-touch-callout: default;
-	-webkit-user-select: text;
-	-moz-user-select: text;
-	-ms-user-select: text;
-	user-select: text;
-}
+.oo-ui-selectable() {}
 
-.oo-ui-inline-spacing( @spacing, @cancelled-spacing: 0 ) {
-	margin-right: @spacing;
-
-	&:last-child {
-		margin-right: @cancelled-spacing;
-	}
-}
+.oo-ui-inline-spacing( @spacing, @cancelled-spacing: 0 ) {}
 
 // Clear floats after the element.
-.oo-ui-clearfix() {
-	&::after {
-		content: ' ';
-		display: block;
-		clear: both;
-	}
-}
+.oo-ui-clearfix() {}
 
 .oo-ui-placeholder( @rules ) {
 	/* stylelint-disable selector-no-vendor-prefix */
@@ -82,14 +56,4 @@
 }
 
 // Screen Reader Helper Mixin
-.oo-ui-screen-reader-text() {
-	display: block;
-	position: absolute;
-	clip: rect( 1px, 1px, 1px, 1px );
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	overflow: hidden;
-}
+.oo-ui-screen-reader-text() {}

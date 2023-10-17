@@ -1,26 +1,5 @@
 @import '../common.less';
 
 .oo-ui-menuSelectWidget {
-	position: absolute;
-	z-index: 4;
-
-	&.oo-ui-clippableElement-clippable {
-		// Override ClippableElement's `min-height`.
-		// Equals to height of one option of approximately `32px`.
-		min-height: 32px;
-	}
-
-	&-invisible {
-		// HACK: MenuSelectWidget probably shouldn't be in the business of hiding itself?
-		// But right now I've better things to do than figure out how TagMultiselectWidget
-		// and the 'filterFromInput' interact…
-		display: none;
-	}
-
-	&-screenReaderMode.oo-ui-element-hidden {
-		display: block !important; // stylelint-disable-line declaration-no-important
-		.oo-ui-screen-reader-text();
-	}
-
 	.theme-oo-ui-menuSelectWidget();
 }

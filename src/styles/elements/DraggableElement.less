@@ -1,35 +1,5 @@
 @import '../common.less';
 
 .oo-ui-draggableElement {
-	// HACK: Widgets will often specify a cursor with higher specificity, so override those here as
-	// they are a common use case of this mixin.
-	&-handle:not( .oo-ui-draggableElement-undraggable ),
-	&-handle:not( .oo-ui-draggableElement-undraggable ).oo-ui-widget {
-		cursor: move;
-		/* stylelint-disable plugin/no-unsupported-browser-features */
-		cursor: grab;
-		/* stylelint-enable plugin/no-unsupported-browser-features */
-	}
-
-	&-handle:not( .oo-ui-draggableElement-undraggable ):active {
-		/* stylelint-disable plugin/no-unsupported-browser-features */
-		cursor: grabbing;
-		/* stylelint-enable plugin/no-unsupported-browser-features */
-	}
-
-	&-handle.oo-ui-widget-disabled,
-	.oo-ui-widget-disabled &-handle {
-		cursor: default;
-	}
-
-	&-placeholder {
-		opacity: 0.2;
-	}
-
-	// Horizontal items should be inline-block by default
-	.oo-ui-draggableGroupElement-horizontal & {
-		display: inline-block;
-	}
-
 	.theme-oo-ui-draggableElement();
 }

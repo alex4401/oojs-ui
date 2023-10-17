@@ -1,50 +1,5 @@
 @import '../common.less';
 
 .oo-ui-tagMultiselectWidget {
-	display: inline-block;
-	position: relative;
-
-	&-handle {
-		width: 100%;
-		display: block;
-		position: relative;
-
-		> .oo-ui-iconElement-icon,
-		> .oo-ui-indicatorElement-indicator {
-			position: absolute;
-			top: 0;
-			height: 100%;
-		}
-	}
-
-	&-content {
-		position: relative;
-	}
-
-	&-group {
-		display: inline;
-	}
-
-	&-outlined {
-		width: 100%;
-	}
-
-	&.oo-ui-widget-disabled &-group > input {
-		display: none;
-	}
-
-	// Support: Chromium
-	// Ensure the focus trap is not 0x0px, which causes OO.ui.isFocusableElement() to return false,
-	// preventing the TagMultiselectWidget from being programatically focussed in BookletLayout.
-	&-focusTrap {
-		display: inline-block;
-		height: 1px;
-		width: 1px;
-
-		&:focus {
-			outline: 0;
-		}
-	}
-
 	.theme-oo-ui-tagMultiselectWidget();
 }

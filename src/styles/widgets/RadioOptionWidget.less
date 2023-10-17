@@ -1,22 +1,5 @@
 @import '../common.less';
 
 .oo-ui-radioOptionWidget {
-	display: table;
-
-	.oo-ui-radioInputWidget,
-	&.oo-ui-labelElement > .oo-ui-labelElement-label {
-		display: table-cell;
-		vertical-align: top;
-	}
-
-	.oo-ui-radioInputWidget {
-		// Since this is a "table cell", this doesn't actually mean 1px, but as narrow as possible
-		width: 1px;
-	}
-
-	&.oo-ui-labelElement > .oo-ui-labelElement-label {
-		white-space: normal;
-	}
-
 	.theme-oo-ui-radioOptionWidget();
 }

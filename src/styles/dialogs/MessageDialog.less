@@ -1,41 +1,5 @@
 @import '../common.less';
 
 .oo-ui-messageDialog {
-	&-actions {
-		.oo-ui-actionWidget {
-			position: relative;
-			text-align: center;
-
-			.oo-ui-buttonElement-button {
-				display: block;
-			}
-
-			.oo-ui-labelElement-label {
-				position: relative;
-				top: auto;
-				bottom: auto;
-			}
-		}
-
-		&-horizontal {
-			display: flex;
-			width: 100%;
-
-			.oo-ui-actionWidget {
-				flex-grow: 1;
-			}
-		}
-
-		&-vertical {
-			display: block;
-
-			.oo-ui-actionWidget {
-				display: block;
-				overflow: hidden;
-				text-overflow: ellipsis;
-			}
-		}
-	}
-
 	.theme-oo-ui-messageDialog();
 }
