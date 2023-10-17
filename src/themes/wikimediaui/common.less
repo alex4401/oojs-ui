@@ -11,14 +11,14 @@
 @import ( reference ) '../../../node_modules/wikimedia-ui-base/wikimedia-ui-base.less';
 
 // Background & Text Colors
-@background-color-base--active: @wmui-color-base80;
-@background-color-frameless--hover: @background-color-quiet--hover;
-@background-color-frameless--active: @background-color-quiet--active;
-@background-color-pending-stripe: @wmui-color-base80;
+@background-color-base--active: var( --wmui-color-base80 );
+@background-color-frameless--hover: var( --background-color-quiet--hover );
+@background-color-frameless--active: var( --background-color-quiet--active );
+@background-color-pending-stripe: var( --wmui-color-base80 );
 // Backdrop is the term used by CSS Fullscreen API and is used to dim the background when a modal Dialog is open. Also known as overlay mask.
 @background-color-backdrop-light: rgba( 255, 255, 255, 0.65 );
-@color-base--deemphasized: @wmui-color-base20;
-@color-taboption: @color-base--hover;
+@color-base--deemphasized: var( --wmui-color-base20 );
+@color-taboption: var( --color-base--hover );
 
 // Primary 'Progressive' and 'Destructive' Colors
 @color-destructive-non-primary: #d73333; // Exemption for non-primary buttons, foremost used in VE, lightened up R50 to align to AA contrast ratio
