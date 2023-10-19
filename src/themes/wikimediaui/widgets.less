@@ -51,7 +51,7 @@
 					border-color: @border-color-base--focus;
 					box-shadow: @box-shadow-progressive-filled--focus;
 					// In Windows high contrast mode the outline becomes visible.
-					outline: @outline-base--focus;
+					outline-color: @outline-color-base--focus;
 				}
 			}
 		}
@@ -87,7 +87,7 @@
 			border-color: @border-color-base--focus;
 			box-shadow: @box-shadow-base--focus;
 			// In Windows high contrast mode the outline becomes visible.
-			outline: @outline-base--focus;
+			outline-color: @outline-color-base--focus;
 		}
 
 		&:hover + span {
@@ -137,16 +137,6 @@
 	&-open &-dropdownButton {
 		> .oo-ui-buttonElement-button {
 			background-color: @background-color-framed--hover;
-
-			.oo-ui-indicatorElement-indicator {
-				opacity: @opacity-icon-base--selected;
-			}
-		}
-	}
-
-	&.oo-ui-widget-disabled {
-		.oo-ui-indicatorElement-indicator {
-			opacity: @opacity-filled--disabled;
 		}
 	}
 }
@@ -171,7 +161,7 @@
 
 		&:focus {
 			border-color: @border-color-base--focus;
-			outline: @outline-base--focus;
+			outline-color: @outline-color-base--focus;
 			box-shadow: @box-shadow-base--focus;
 		}
 	}
@@ -211,7 +201,7 @@
 
 			&:focus {
 				border-color: @border-color-base--focus;
-				outline: @outline-base--focus;
+				outline-color: @outline-color-base--focus;
 				box-shadow: @box-shadow-base--focus;
 			}
 		}
@@ -271,7 +261,7 @@
 
 .theme-oo-ui-menuSelectWidget() {
 	background-color: @background-color-base;
-	border: @border-menu;
+	border-color: @border-color-menu;
 	box-shadow: @box-shadow-menu;
 }
 
@@ -279,8 +269,6 @@
 
 .theme-oo-ui-messageWidget() {
 	&.oo-ui-messageWidget-block {
-		border: @border-width-base @border-style-base;
-
 		&.oo-ui-flaggedElement-error {
 			background-color: @background-color-error--framed;
 			border-color: @border-color-error;
@@ -443,7 +431,7 @@
 			border-color: @border-color-input-binary;
 
 			&::before {
-				border: @border-width-base @border-style-base transparent;
+				border-color: transparent;
 			}
 		}
 
@@ -522,7 +510,7 @@
 .theme-oo-ui-selectFileWidget() {
 	&-dropTarget {
 		background-color: @background-color-base;
-		border: @border-base;
+		border-color: @border-color-base;
 	}
 
 	&.oo-ui-widget-enabled {
@@ -557,7 +545,7 @@
 
 	.oo-ui-tabSelectWidget-framed & {
 		.oo-ui-labelElement-label {
-			border-bottom: ( 2 * @border-width-base ) @border-style-base transparent;
+			border-bottom-color: transparent;
 		}
 
 		&.oo-ui-optionWidget-selected {
@@ -642,7 +630,7 @@
 }
 
 .theme-oo-ui-tagItemWidget() {
-	border: @border-base;
+	border-color: @border-color-base;
 
 	&.oo-ui-widget-enabled {
 		color: @color-base;
@@ -656,7 +644,7 @@
 		&:focus {
 			border-color: @border-color-base--focus;
 			box-shadow: @box-shadow-base--focus;
-			outline: @outline-base--focus;
+			outline-color: @outline-color-base--focus;
 		}
 
 		&:not( .oo-ui-tagItemWidget-fixed ) {
@@ -697,7 +685,7 @@
 
 .theme-oo-ui-tagMultiselectWidget() {
 	&-handle {
-		border: @border-base;
+		border-color: @border-color-base;
 
 		.oo-ui-tagMultiselectWidget-group {
 			> input {
@@ -706,7 +694,7 @@
 				.mw-placeholder();
 
 				&:focus {
-					outline: @outline-base--focus; // Support: Chrome
+					outline-color: @outline-color-base--focus; // Support: Chrome
 				}
 			}
 		}
@@ -723,7 +711,7 @@
 
 			&.oo-ui-tagMultiselectWidget-focus .oo-ui-tagMultiselectWidget-handle {
 				border-color: @border-color-base--focus;
-				outline: @outline-base--focus;
+				outline-color: @outline-color-base--focus;
 				box-shadow: @box-shadow-base--focus;
 			}
 
@@ -765,7 +753,7 @@
 	.oo-ui-inputWidget-input {
 		background-color: @background-color-base;
 		color: @color-base--emphasized;
-		border: @border-base;
+		border-color: @border-color-base;
 	}
 
 	.oo-ui-pendingElement-pending {
@@ -784,7 +772,7 @@
 
 			&:focus {
 				border-color: @border-color-base--focus;
-				outline: @outline-base--focus;
+				outline-color: @outline-color-base--focus;
 				box-shadow: @box-shadow-base--focus;
 			}
 
@@ -811,7 +799,7 @@
 		@media screen {
 			@media ( min-width: 0 ) {
 				textarea.oo-ui-inputWidget-input:focus {
-					outline: 1px solid @color-primary;
+					outline-color: @color-primary;
 					outline-offset: -2px;
 				}
 
@@ -867,17 +855,17 @@
 
 .theme-oo-ui-toggleSwitchWidget() {
 	background-color: @background-color-framed;
-	border: @border-input-binary;
+	border-color: @border-color-input-binary;
 
 	// Inner focus outline, set visible when toggled on further down.
 	&::before {
-		border: @border-width-base @border-style-base transparent;
+		border-color: transparent;
 	}
 
 	&.oo-ui-widget-enabled {
 		.oo-ui-toggleSwitchWidget-grip {
 			background-color: @background-color-framed;
-			border: @border-input-binary;
+			border-color: @border-color-input-binary;
 		}
 
 		&:hover {
@@ -906,7 +894,7 @@
 		&:focus {
 			border-color: @border-color-base--focus;
 			box-shadow: @box-shadow-base--focus;
-			outline: @outline-base--focus;
+			outline-color: @outline-color-base--focus;
 
 			.oo-ui-toggleSwitchWidget-grip {
 				border-color: @border-color-base--focus;
@@ -948,7 +936,7 @@
 		border-color: @border-color-base--disabled;
 
 		&.oo-ui-toggleWidget-off .oo-ui-toggleSwitchWidget-grip {
-			border: @border-filled--disabled;
+			border-color: @border-color-filled--disabled;
 			box-shadow: @box-shadow-filled--disabled;
 		}
 
@@ -962,6 +950,5 @@
 	// Normalize placeholder styling, see T139034
 	.oo-ui-placeholder( {
 		color: @color-placeholder;
-		opacity: 1;
 	} );
 }

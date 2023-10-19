@@ -6,12 +6,12 @@
 		color: @color-base;
 
 		.oo-ui-toolbar-position-top > & {
-			border-bottom: @border-toolbar;
+			border-bottom-color: @border-color-toolbar;
 			box-shadow: @box-shadow-toolbar-top;
 		}
 
 		.oo-ui-toolbar-position-bottom > & {
-			border-top: @border-toolbar;
+			border-top-color: @border-color-toolbar;
 			box-shadow: @box-shadow-toolbar-bottom;
 		}
 
@@ -23,11 +23,11 @@
 
 	&-narrow {
 		&.oo-ui-toolbar-position-top .oo-ui-toolbar-bar::after {
-			border-bottom: @border-toolbar;
+			border-bottom-color: @border-color-toolbar;
 		}
 
 		&.oo-ui-toolbar-position-bottom .oo-ui-toolbar-bar::after {
-			border-top: @border-toolbar;
+			border-top-color: @border-color-toolbar;
 		}
 	}
 }
@@ -36,13 +36,9 @@
 	&.oo-ui-widget-enabled {
 		.oo-ui-tool-link {
 			&:focus {
-				outline: @border-width-base @border-style-base @border-color-base--focus;
+				outline-color: @border-color-base--focus;
 				box-shadow: @box-shadow-base--focus;
 			}
-		}
-
-		.oo-ui-iconElement-icon {
-			opacity: @opacity-icon-base;
 		}
 
 		.mw-tool-colored( ~'.oo-ui-tool-link', inherit, @background-color-tool--hover, @color-primary--active, @color-primary--focus, @color-tool--active );
@@ -143,8 +139,8 @@
 }
 
 .theme-oo-ui-menuToolGroup() {
-	border-left: @border-toolgroup;
-	border-right: @border-toolgroup;
+	border-left-color: @border-color-toolgroup;
+	border-right-color: @border-color-toolgroup;
 
 	&-tools .oo-ui-tool {
 		&.oo-ui-widget-enabled {
@@ -171,7 +167,7 @@
 
 	&-tools {
 		background-color: @background-color-toolbar;
-		border: @border-toolbar;
+		border-color: @border-color-toolbar;
 		box-shadow: @box-shadow-menu;
 
 		.oo-ui-tool-link {
@@ -192,7 +188,7 @@
 			}
 
 			&:focus {
-				outline: @border-width-base @border-style-base @border-color-base--focus;
+				outline-color: @border-color-base--focus;
 				box-shadow: @box-shadow-base--focus;
 			}
 		}
@@ -200,7 +196,7 @@
 		// Due to z-index shuffling `border` has to acts as `background` here
 		.oo-ui-toolbar-actions & {
 			> .oo-ui-popupToolGroup-handle {
-				border-right: @border-width-base @border-style-base transparent;
+				border-right-color: transparent;
 
 				&:hover {
 					border-right-color: @background-color-tool--hover;
@@ -234,7 +230,7 @@
 	}
 
 	&-tools .oo-ui-tool.oo-ui-widget-enabled .oo-ui-tool-link:focus {
-		outline: @outline-base--focus;
+		outline-color: @outline-color-base--focus;
 		box-shadow: @box-shadow-popuptoolgroup-tool--focus;
 	}
 

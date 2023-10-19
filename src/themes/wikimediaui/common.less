@@ -8,20 +8,20 @@
 @import ( reference ) '../../../node_modules/wikimedia-ui-base/wikimedia-ui-base.less';
 
 // Background & Text Colors
-@background-color-base--active: var( --wmui-color-base80 );
-@background-color-frameless--hover: var( --background-color-quiet--hover );
-@background-color-frameless--active: var( --background-color-quiet--active );
-@background-color-pending-stripe: var( --wmui-color-base80 );
+@background-color-base--active: @wmui-color-base80;
+@background-color-frameless--hover: @background-color-quiet--hover;
+@background-color-frameless--active: @background-color-quiet--active;
+@background-color-pending-stripe: @wmui-color-base80;
 // Backdrop is the term used by CSS Fullscreen API and is used to dim the background when a modal Dialog is open. Also known as overlay mask.
 @background-color-backdrop-light: rgba( 255, 255, 255, 0.65 );
-@color-base--deemphasized: var( --wmui-color-base20 );
-@color-taboption: var( --color-base--hover );
+@color-base--deemphasized: @wmui-color-base20;
+@color-taboption: @color-base--hover;
 
 // Primary 'Progressive' and 'Destructive' Colors
 @color-destructive-non-primary: #d73333; // Exemption for non-primary buttons, foremost used in VE, lightened up R50 to align to AA contrast ratio
 
-@border-filled--disabled: @border-width-base @border-style-base @border-color-filled--disabled;
-@border-dialog-bar: @border-width-base @border-style-base @border-color-dialog-bar;
+@border-color-dialog: @border-color-base;
+@border-color-menu: @border-color-base;
 
 @border-color-framed-progressive--hover: @color-primary--hover;
 @border-color-framed-destructive--hover: @color-destructive--hover;
@@ -30,8 +30,8 @@
 @border-color-focus-inset: @color-base--inverted;
 @border-color-dialog-bar: @wmui-color-base70;
 
-@border-toolbar: @border-width-base @border-style-base @wmui-color-base70;
-@border-toolgroup: @border-width-base @border-style-base @wmui-color-base80;
+@border-color-toolbar: @wmui-color-base70;
+@border-color-toolgroup: @wmui-color-base80;
 
 @box-shadow-toolbar-top: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
 @box-shadow-toolbar-bottom: 0 -1px 1px 0 rgba( 0, 0, 0, 0.1 );
@@ -49,7 +49,6 @@
 // Binary Input Widgets (CheckboxInput, RadioInput, ToggleSwitch)
 @background-color-input-binary--active: @color-primary--active;
 @background-color-input-binary--checked: @color-primary;
-@border-input-binary: @border-width-base @border-style-base @border-color-input-binary;
 @border-color-input-binary: @border-color-base--active;
 @border-color-input-binary--active: @color-primary--active;
 @border-color-input-binary--checked: @color-primary;
@@ -142,7 +141,7 @@
 	}
 
 	> @{child}:focus {
-		outline: @border-width-base @border-style-base @focus;
+		outline-color: @focus;
 		box-shadow: inset 0 0 0 1px @focus;
 	}
 
@@ -166,7 +165,7 @@
 	}
 
 	> @{child}:focus {
-		outline: @border-width-base @border-style-base @focus;
+		outline-color: @focus;
 		box-shadow: inset 0 0 0 1px @focus, inset 0 0 0 2px @color-base--inverted;
 	}
 

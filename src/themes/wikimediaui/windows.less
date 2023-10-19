@@ -6,7 +6,7 @@
 
 .theme-oo-ui-messageDialog() {
 	&-content > .oo-ui-window-foot {
-		outline: @border-dialog; // Use `@border-dialog` here as `outline` is `border` substitute.
+		outline-color: @border-color-dialog; // Use `@border-dialog` here as `outline` is `border` substitute.
 	}
 
 	&-title {
@@ -58,7 +58,7 @@
 	&-content {
 		> .oo-ui-window-head,
 		> .oo-ui-window-foot {
-			outline: @border-dialog-bar; // Use `@border-dialog-bar` here as `outline` is `border` substitute.
+			outline-color: @border-color-dialog-bar; // Use `@border-dialog-bar` here as `outline` is `border` substitute.
 		}
 	}
 
@@ -149,7 +149,7 @@
 
 	// stylelint-disable-next-line selector-not-notation
 	&-modal:not( &-size-full ) > .oo-ui-dialog > .oo-ui-window-frame {
-		border: @border-dialog;
+		border-color: @border-color-dialog;
 		box-shadow: @box-shadow-dialog;
 	}
 }
