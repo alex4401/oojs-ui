@@ -1,0 +1,296 @@
+// == Colors ==
+// WikimediaUI (`wmui`) color palette
+// See https://design.wikimedia.org/style-guide/visual-style_colors.html
+// Don't use those variables directly, instead define your vars
+// referring to them as applied further below.
+
+@wmui-color-base0: var( --wmui-color-base0 );   // = HSB 0°, 0%, 0%
+@wmui-color-base10: var( --wmui-color-base10 ); // = HSB 210°, 6%, 13%
+@wmui-color-base20: var( --wmui-color-base20 ); // WCAG 2.0 level AAA 7.09:1 contrast ratio on `#fff`
+@wmui-color-base30: var( --wmui-color-base30 ); // WCAG 2.0 level AA at 4.52:1 contrast ratio on `#fff`
+@wmui-color-base50: var( --wmui-color-base50 ); // = HSB 212°, 8%, 69%
+@wmui-color-base70: var( --wmui-color-base70 ); // = HSB 213°, 4%, 82%
+@wmui-color-base80: var( --wmui-color-base80 ); // = HSB 220°, 3%, 94%
+@wmui-color-base90: var( --wmui-color-base90 ); // = HSB 210°, 1%, 98%
+@wmui-color-base100: var( --wmui-color-base100 );    // = HSB 0°, 0%, 100%
+
+@wmui-color-accent30: var( --wmui-color-accent30 ); // = HSB 220°, 70%, 55%
+@wmui-color-accent50: var( --wmui-color-accent50 );    // = HSB 220°, 75%, 80%
+@wmui-color-accent90: var( --wmui-color-accent90 ); // = HSB 214°, 8%, 100%
+
+@wmui-color-red30: var( --wmui-color-red30 ); // = HSB 360°, 80%, 70%
+@wmui-color-red50: var( --wmui-color-red50 );    // = HSB 360°, 77%, 87%
+@wmui-color-red90: var( --wmui-color-red90 ); // = HSB 3°, 9%, 100%
+
+@wmui-color-yellow30: var( --wmui-color-yellow30 ); // = HSB 36°, 100%, 67%
+@wmui-color-yellow50: var( --wmui-color-yellow50 ); // = HSB 43°, 100%, 93%
+@wmui-color-yellow90: var( --wmui-color-yellow90 ); // = HSB 39°, 9%, 100%
+
+@wmui-color-green30: var( --wmui-color-green30 ); // = HSB 167°, 85%, 53%
+@wmui-color-green50: var( --wmui-color-green50 ); // = HSB 167°, 100%, 69%
+@wmui-color-green90: var( --wmui-color-green90 ); // = HSB 166°, 16%, 99%
+
+// Note, this color is part of the Codex Design System, under different naming scheme.
+@wmui-color-green700: var( --wmui-color-green700 );
+
+// Modifier colors, not part of official palette, limited to interaction state usage.
+@wmui-color-base10--lighten: var( --wmui-color-base10--lighten );
+@wmui-color-accent50--lighten: var( --wmui-color-accent50--lighten ); // = `lighten( @color-primary, 3 )`
+@wmui-color-red50--lighten: var( --wmui-color-red50--lighten ); // ~= `filter: brightness( 120% )`
+@wmui-color-green50--lighten: var( --wmui-color-green50--lighten );
+@wmui-color-purple50: var( --wmui-color-purple50 );
+
+// From here on no static color values, only variable references.
+// Background Colors
+@background-color-base: var( --wmui-background-color-base );
+@background-color-base--hover: var( --wmui-background-color-base--hover );
+@background-color-base--disabled: var( --wmui-background-color-base--disabled );
+@background-color-base--read-only: var( --wmui-background-color-base--read-only );
+@background-color-code: var( --wmui-background-color-code );
+// 'Framed' UI elements (Framed Buttons, Dropdowns, ToggleSwitches…)
+@background-color-framed: var( --wmui-background-color-framed );
+@background-color-framed--hover: var( --wmui-background-color-framed--hover );
+@background-color-framed--active: var( --wmui-background-color-framed--active );
+// 'Filled' UI elements (Checkboxes, Radios, ProgressBars…)
+@background-color-filled--disabled: var( --wmui-background-color-filled--disabled );
+// Binary Input elements (Checkboxes, Radios, Toggle Switches)
+@background-color-input-binary--active: var( --wmui-background-color-input-binary--active );
+@background-color-input-binary--checked: var( --wmui-background-color-input-binary--checked );
+// Quiet Buttons
+@background-color-quiet: var( --wmui-background-color-quiet );
+// Use `rgba()` values here as the quiet buttons need to blend in with background.
+@background-color-quiet--hover: var( --wmui-background-color-quiet--hover ); // = `@wmui-color-base90` on white.
+@background-color-quiet--active: var( --wmui-background-color-quiet--active ); // = `@wmui-color-base80` on white.
+// Toolbar and Tools
+@background-color-toolbar: var( --wmui-background-color-toolbar );
+@background-color-tool--hover: var( --wmui-background-color-tool--hover );
+@background-color-tool--active: var( --wmui-background-color-tool--active );
+@background-color-tool--active-hover: var( --wmui-background-color-tool--active-hover );
+// Tabs Navigation Background Color
+@background-color-tabs: var( --wmui-background-color-tabs );
+// User system messages (errors, warnings, successes, notices)
+@background-color-error--framed: var( --wmui-background-color-error--framed );
+@background-color-warning--framed: var( --wmui-background-color-warning--framed );
+@background-color-success--framed: var( --wmui-background-color-success--framed );
+@background-color-notice--framed: var( --wmui-background-color-notice--framed );
+// Highlight Colors for text highlighting, think metaphorically text marker
+@background-color-highlight: var( --wmui-background-color-highlight ); // Equals to `#ffe29e` on `#fff` background.
+
+// Foreground Colors
+@color-base: var( --wmui-color-base );
+@color-base--hover: var( --wmui-color-base--hover );
+@color-base--active: var( --wmui-color-base--active );
+@color-base--inverted: var( --wmui-color-base--inverted );
+@color-base--emphasized: var( --wmui-color-base--emphasized );
+@color-base--subtle: var( --wmui-color-base--subtle );
+@color-base--disabled: var( --wmui-color-base--disabled );
+@color-filled--disabled: var( --wmui-color-filled--disabled );
+@color-accessory: var( --wmui-color-accessory );
+@color-placeholder: var( --wmui-color-placeholder );
+// Primary 'Progressive' Color, Background Color and states
+@background-color-primary: var( --wmui-background-color-primary );
+@background-color-primary--hover: var( --wmui-background-color-primary--hover );
+@color-primary: var( --wmui-color-primary );
+@color-primary--hover: var( --wmui-color-primary--hover );
+@color-primary--active: var( --wmui-color-primary--active );
+@color-primary--focus: var( --wmui-color-primary--focus );
+// 'Destructive' Color, Background Color and states
+@background-color-destructive: var( --wmui-background-color-destructive );
+@color-destructive: var( --wmui-color-destructive );
+@color-destructive--hover: var( --wmui-color-destructive--hover );
+@color-destructive--active: var( --wmui-color-destructive--active );
+@color-destructive--focus: var( --wmui-color-destructive--focus );
+// Secondary Color and states (links only)
+@color-secondary: var( --wmui-color-secondary );
+@color-secondary--hover: var( --wmui-color-secondary--hover );
+@color-secondary--active: var( --wmui-color-secondary--active );
+@color-secondary--focus: var( --wmui-color-secondary--focus );
+// User system messages (errors, warnings, successes, notices)
+@color-error: var( --wmui-color-error );
+@color-warning: var( --wmui-color-warning );
+@color-success: var( --wmui-color-success );
+@color-success--framed: var( --wmui-color-success--framed );
+@color-notice: var( --wmui-color-notice );
+// Toolbar and Tools
+@color-tool--hover: var( --wmui-color-tool--hover ); // Used here in combination with `:hover` background-color turning light grey
+@color-tool--active: var( --wmui-color-tool--active );
+
+
+// Opacity
+@opacity-base: var( --wmui-opacity-base );
+@opacity-icon-base: var( --wmui-opacity-icon-base ); // = `#222` on `background-color: #fff`, closest to `#202122`
+@opacity-icon-base--hover: var( --wmui-opacity-icon-base--hover ); // = `#424242` on `background-color: #fff`, closest to `#404244`
+@opacity-icon-base--selected: var( --wmui-opacity-icon-base--selected );
+@opacity-icon-base--disabled: var( --wmui-opacity-icon-base--disabled ); // = `#7d7d7d` on `background-color: #fff`, closest to `#72777d`. HSB 0°, 0%, 49%.
+@opacity-icon-accessory: var( --wmui-opacity-icon-accessory ); // = `#555`, closest to `#54595d` on background-color `#fff`.
+
+
+// == Positioning ==
+// Positioning Model
+// Use `px` unit to prevent pixel rounding error when using `@size-input-binary / 4`.
+// Works with different sizes on mobile and desktop as it negatively offsets from outside.
+@position-offset-input-radio-focus: var( --wmui-position-offset-input-radio-focus );
+
+// Z-Index
+@z-index-base: var( --wmui-z-index-base );
+@z-index-overlay: var( --wmui-z-index-overlay );
+
+
+// == Box Model properties ==
+// Box Sizing
+@box-sizing-base: var( --wmui-box-sizing-base );
+
+// `@*size` variables are used for `*width` & `*height` properties.
+@min-size-base: var( --wmui-min-size-base ); // Values used for `min-*` are defined in `px`, see T130691.
+@size-base: var( --wmui-size-base );
+@size-full: var( --wmui-size-full );
+
+@min-size-icon: var( --wmui-min-size-icon );
+@size-icon: var( --wmui-size-icon );
+@min-size-indicator: var( --wmui-min-size-indicator );
+@size-indicator: var( --wmui-size-indicator );
+@size-input-binary: var( --wmui-size-input-binary );
+@size-tool: var( --wmui-size-tool );
+
+// Max Widths
+@max-width-base: var( --wmui-max-width-base );
+@max-width-button: var( --wmui-max-width-button ); // = `460px` at `16px` base, see T95367
+@max-width-input: var( --wmui-max-width-input );
+@max-width-input-inline: var( --wmui-max-width-input-inline );
+
+// Border
+@border-base: var( --wmui-border-base );
+@border-dialog: var( --wmui-border-dialog );
+@border-menu: var( --wmui-border-menu );
+@border-input-binary: var( --wmui-border-input-binary );
+// User system messages (errors, warnings, successes, notices)
+@border-error: var( --wmui-border-error );
+@border-warning: var( --wmui-border-warning );
+@border-success: var( --wmui-border-success );
+@border-notice: var( --wmui-border-notice );
+// Border Colors
+@border-color-base: var( --wmui-border-color-base );
+@border-color-base--hover: var( --wmui-border-color-base--hover );
+@border-color-base--active: var( --wmui-border-color-base--active );
+@border-color-base--focus: var( --wmui-border-color-base--focus );
+@border-color-base--disabled: var( --wmui-border-color-base--disabled );
+
+@border-color-filled--disabled: var( --wmui-border-color-filled--disabled );
+// Border Colors primary buttons
+@border-color-primary: var( --wmui-border-color-primary );
+@border-color-primary--hover: var( --wmui-border-color-primary--hover );
+@border-color-primary--active: var( --wmui-border-color-primary--active );
+@border-color-primary--focus: var( --wmui-border-color-primary--focus );
+@border-color-destructive: var( --wmui-border-color-destructive );
+@border-color-destructive--hover: var( --wmui-border-color-destructive--hover );
+@border-color-destructive--active: var( --wmui-border-color-destructive--active );
+@border-color-destructive--focus: var( --wmui-border-color-destructive--focus );
+@border-color-inset--focus: var( --wmui-border-color-inset--focus );
+@border-color-input--hover: var( --wmui-border-color-input--hover );
+@border-color-input-binary: var( --wmui-border-color-input-binary );
+@border-color-input-binary--active: var( --wmui-border-color-input-binary--active );
+@border-color-input-binary--checked: var( --wmui-border-color-input-binary--checked );
+@border-color-heading: var( --wmui-border-color-heading );
+@border-color-divider: var( --wmui-border-color-divider );
+@border-color-wikitable: var( --wmui-border-color-wikitable ); // See T168029
+// Border Colors user system messages
+@border-color-error: var( --wmui-border-color-error );
+@border-color-warning: var( --wmui-border-color-warning );
+@border-color-success: var( --wmui-border-color-success );
+@border-color-notice: var( --wmui-border-color-notice );
+// Border Styles
+@border-style-base: var( --wmui-border-style-base );
+// Border Widths
+@border-width-base: var( --wmui-border-width-base );
+// Border Radius
+@border-radius-base: var( --wmui-border-radius-base );
+// Use for circle or ellipsis.
+// See https://stackoverflow.com/a/29966500
+@border-radius-circle: var( --wmui-border-radius-circle );
+// Use for rounded rectangle.
+// Corner overlap reduce radii to half of size of smallest side.
+// See https://www.w3.org/TR/css-backgrounds-3/#corner-overlap
+@border-radius-round: var( --wmui-border-radius-round );
+@border-radius-input-radio: var( --wmui-border-radius-input-radio );
+
+// Paddings
+@padding-base: var( --wmui-padding-base );
+@padding-input-text: var( --wmui-padding-input-text );
+@padding-horizontal-base: var( --wmui-padding-horizontal-base );
+// Must be < `8` as it cuts off scripts like Burmese. Directly connected to `line-height` further down.
+@padding-vertical-base: var( --wmui-padding-vertical-base );
+@padding-horizontal-input-text: var( --wmui-padding-horizontal-input-text );
+// Menu items don't have a border. So add it to padding.
+@padding-vertical-menu: var( --wmui-padding-vertical-menu );
+
+// Box Shadows
+// Base `box-shadow` set to `transparent` for transition purpose.
+@box-shadow-base: var( --wmui-box-shadow-base );
+@box-shadow-base--focus: var( --wmui-box-shadow-base--focus );
+@box-shadow-primary--focus: var( --wmui-box-shadow-primary--focus );
+@box-shadow-destructive--focus: var( --wmui-box-shadow-destructive--focus );
+@box-shadow-filled--disabled: var( --wmui-box-shadow-filled--disabled );
+@box-shadow-card: var( --wmui-box-shadow-card );
+@box-shadow-dialog: var( --wmui-box-shadow-dialog );
+@box-shadow-menu: var( --wmui-box-shadow-menu );
+
+// Outlines
+// Enable Windows high contrast mode on certain widgets, that have default outlines overridden.
+@outline-base--focus: var( --wmui-outline-base--focus );
+@outline-color-base--focus: var( --wmui-outline-color-base--focus );
+
+
+// == Typography incl. print properties ==
+// See https://design.wikimedia.org/style-guide/visual-style_typography.html
+// Font Families
+@font-family-base: var( --wmui-font-family-base );
+@font-family-heading-main: var( --wmui-font-family-heading-main );
+// To be deprecated, see T247166.
+@font-family-sans: var( --wmui-font-family-sans );
+@font-family-sans--fallback: var( --wmui-font-family-sans--fallback );
+// Provide better operating system-specific readability, see T175877.
+// `system-ui` is currently not an option due to OS/language combination issues, see T175877#4776576.
+@font-family-system-sans: var( --wmui-font-family-system-sans );
+@font-family-serif: var( --wmui-font-family-serif );
+@font-family-serif--fallback: var( --wmui-font-family-serif--fallback );
+// Provide better operating system-specific monospace stack, see T209915.
+@font-family-monospace: var( --wmui-font-family-monospace );
+@font-family-monospace--fallback: var( --wmui-font-family-monospace--fallback ); // See T176636.
+// Font Weights
+@font-weight-base: var( --wmui-font-weight-base );
+// See https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Common_weight_name_mapping
+@font-weight-hairline: var( --wmui-font-weight-hairline );
+@font-weight-light: var( --wmui-font-weight-light );
+@font-weight-normal: var( --wmui-font-weight-normal );
+@font-weight-semi-bold: var( --wmui-font-weight-semi-bold );
+@font-weight-bold: var( --wmui-font-weight-bold );
+// Line Heights
+@line-height-base: var( --wmui-line-height-base );
+@line-height-heading: var( --wmui-line-height-heading );
+@text-decoration-link--hover: var( --wmui-text-decoration-link--hover );
+// Text Shadows
+@text-shadow-base: var( --wmui-text-shadow-base ); // 'coined' effect
+@text-shadow-base--disabled: var( --wmui-text-shadow-base--disabled );
+
+
+// == Other Properties ==
+// Cursors
+@cursor-base--disabled: var( --wmui-cursor-base--disabled );
+
+
+// == Animation & Transition ==
+// Transitions
+@transition-base: var( --wmui-transition-base ); // `ease` is the initial value
+
+// Transitions > Durations
+@transition-duration-base: var( --wmui-transition-duration-base );
+@transition-duration-medium: var( --wmui-transition-duration-medium );
+
+
+// == Deprecated variables ==
+// Since v0.22.0
+@opacity-base--disabled: var( --wmui-opacity-base--disabled );
+// Use non-shorthand properties instead.
+@transition-ease-medium: var( --wmui-transition-ease-medium );
+// `ease-out` is preferably used on human initiated transitions, for example dialogs
+@transition-ease-out-medium: var( --wmui-transition-ease-out-medium );
