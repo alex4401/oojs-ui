@@ -653,7 +653,7 @@ module.exports = function ( grunt ) {
 	grunt.registerTask( 'build-styling-ltr', [
 		// Same as 'build-styling' but without 'cssjanus' and 'concat:demoCss' which are
 		// only for RTL.
-		'colorizeSvg', 'less',
+		'less',
 		'concat:css', 'concat:omnibusCss',
 		'copy:images'
 	] );
