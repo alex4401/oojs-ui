@@ -7,7 +7,7 @@
 		> .oo-ui-buttonElement-button {
 			&:focus {
 				// In Windows high contrast mode the transparent outline becomes visible.
-				outline: @outline-base--focus;
+				outline-color: @outline-color-base--focus;
 			}
 		}
 	}
@@ -83,7 +83,7 @@
 			}
 
 			&.oo-ui-buttonElement-active > .oo-ui-buttonElement-button {
-				background-color: mix( @color-primary--active, @background-color-filled--disabled, 35% );
+				background-color: @background-color-filled--primary-disabled;
 			}
 		}
 
@@ -97,13 +97,6 @@
 					background-color: @background-color-framed--hover;
 					color: @color-base--hover;
 					border-color: @border-color-base--hover;
-
-					> .oo-ui-iconElement-icon,
-					> .oo-ui-indicatorElement-indicator {
-						&:not( .oo-ui-image-invert ) {
-							opacity: @opacity-icon-base--hover;
-						}
-					}
 				}
 
 				&:focus {

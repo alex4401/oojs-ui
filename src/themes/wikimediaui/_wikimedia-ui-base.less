@@ -1,0 +1,554 @@
+/**
+ * WikimediaUI Base v0.22.0
+ * Wikimedia Foundation user interface base variables
+ * https://gerrit.wikimedia.org/g/wikimedia-ui-base/
+ *
+ * See also https://design.wikimedia.org/style-guide/
+ */
+
+// == Colors ==
+// WikimediaUI (`wmui`) color palette
+// See https://design.wikimedia.org/style-guide/visual-style_colors.html
+// Don't use those variables directly, instead define your vars
+// referring to them as applied further below.
+
+:root {
+	@-local-wmui-color-base0: #000;
+	--wmui-color-base0: @-local-wmui-color-base0;    // = HSB 0°, 0%, 0%
+	@-local-wmui-color-base10: #202122;
+	--wmui-color-base10: @-local-wmui-color-base10; // = HSB 210°, 6%, 13%
+	@-local-wmui-color-base20: #54595d;
+	--wmui-color-base20: @-local-wmui-color-base20; // = HSB 207°, 10%, 36%; WCAG 2.0 level AAA 7.09:1 contrast ratio on `#fff`
+	@-local-wmui-color-base30: #72777d;
+	--wmui-color-base30: @-local-wmui-color-base30; // = HSB 210°, 9%, 49%; WCAG 2.0 level AA at 4.52:1 contrast ratio on `#fff`
+	@-local-wmui-color-base50: #a2a9b1;
+	--wmui-color-base50: @-local-wmui-color-base50; // = HSB 212°, 8%, 69%
+	@-local-wmui-color-base70: #c8ccd1;
+	--wmui-color-base70: @-local-wmui-color-base70; // = HSB 213°, 4%, 82%
+	@-local-wmui-color-base80: #eaecf0;
+	--wmui-color-base80: @-local-wmui-color-base80; // = HSB 220°, 3%, 94%
+	@-local-wmui-color-base90: #f8f9fa;
+	--wmui-color-base90: @-local-wmui-color-base90; // = HSB 210°, 1%, 98%
+	@-local-wmui-color-base100: #fff;
+	--wmui-color-base100: @-local-wmui-color-base100;    // = HSB 0°, 0%, 100%
+
+	@-local-wmui-color-accent30: #2a4b8d;
+	--wmui-color-accent30: @-local-wmui-color-accent30; // = HSB 220°, 70%, 55%
+	@-local-wmui-color-accent50: #36c;
+	--wmui-color-accent50: @-local-wmui-color-accent50;    // = HSB 220°, 75%, 80%
+	@-local-wmui-color-accent90: #eaf3ff;
+	--wmui-color-accent90: @-local-wmui-color-accent90; // = HSB 214°, 8%, 100%
+
+	@-local-wmui-color-red30: #b32424;
+	--wmui-color-red30: @-local-wmui-color-red30; // = HSB 360°, 80%, 70%
+	@-local-wmui-color-red50: #d33;
+	--wmui-color-red50: @-local-wmui-color-red50;    // = HSB 360°, 77%, 87%
+	@-local-wmui-color-red90: #fee7e6;
+	--wmui-color-red90: @-local-wmui-color-red90; // = HSB 3°, 9%, 100%
+
+	@-local-wmui-color-yellow30: #ac6600;
+	--wmui-color-yellow30: @-local-wmui-color-yellow30; // = HSB 36°, 100%, 67%
+	@-local-wmui-color-yellow50: #edab00;
+	--wmui-color-yellow50: @-local-wmui-color-yellow50; // = HSB 43°, 100%, 93%
+	@-local-wmui-color-yellow90: #fef6e7;
+	--wmui-color-yellow90: @-local-wmui-color-yellow90; // = HSB 39°, 9%, 100%
+
+	@-local-wmui-color-green30: #14866d;
+	--wmui-color-green30: @-local-wmui-color-green30; // = HSB 167°, 85%, 53%
+	@-local-wmui-color-green50: #00af89;
+	--wmui-color-green50: @-local-wmui-color-green50; // = HSB 167°, 100%, 69%
+	@-local-wmui-color-green90: #d5fdf4;
+	--wmui-color-green90: @-local-wmui-color-green90; // = HSB 166°, 16%, 99%
+
+// Note, this color is part of the Codex Design System, under different naming scheme.
+	@-local-wmui-color-green700: #096450;
+	--wmui-color-green700: @-local-wmui-color-green700;
+
+// Modifier colors, not part of official palette, limited to interaction state usage.
+	@-local-wmui-color-base10--lighten: #404244;
+	--wmui-color-base10--lighten: @-local-wmui-color-base10--lighten;
+	@-local-wmui-color-accent50--lighten: #447ff5;
+	--wmui-color-accent50--lighten: @-local-wmui-color-accent50--lighten; // = `lighten( @color-primary, 3 )`
+	@-local-wmui-color-red50--lighten: #ff4242;
+	--wmui-color-red50--lighten: @-local-wmui-color-red50--lighten; // ~= `filter: brightness( 120% )`
+	@-local-wmui-color-green50--lighten: #1c6665;
+	--wmui-color-green50--lighten: @-local-wmui-color-green50--lighten;
+	@-local-wmui-color-purple50: #6b4ba1;
+	--wmui-color-purple50: @-local-wmui-color-purple50;
+
+// From here on no static color values, only variable references.
+// Background Colors
+	@-local-background-color-base: @wmui-color-base100;
+	--wmui-background-color-base: @-local-background-color-base;
+	@-local-background-color-base--hover: @wmui-color-base80;
+	--wmui-background-color-base--hover: @-local-background-color-base--hover;
+	@-local-background-color-base--disabled: @wmui-color-base80;
+	--wmui-background-color-base--disabled: @-local-background-color-base--disabled;
+	@-local-background-color-base--read-only: @wmui-color-base90;
+	--wmui-background-color-base--read-only: @-local-background-color-base--read-only;
+	@-local-background-color-code: @wmui-color-base90;
+	--wmui-background-color-code: @-local-background-color-code;
+// 'Framed' UI elements (Framed Buttons, Dropdowns, ToggleSwitches…)
+	@-local-background-color-framed: @wmui-color-base90;
+	--wmui-background-color-framed: @-local-background-color-framed;
+	@-local-background-color-framed--hover: @wmui-color-base100;
+	--wmui-background-color-framed--hover: @-local-background-color-framed--hover;
+	@-local-background-color-framed--active: @wmui-color-base80;
+	--wmui-background-color-framed--active: @-local-background-color-framed--active;
+// 'Filled' UI elements (Checkboxes, Radios, ProgressBars…)
+	@-local-background-color-filled--disabled: @wmui-color-base70;
+	@-expanded-background-color-filled--disabled: @-local-wmui-color-base70;
+	--wmui-background-color-filled--disabled: @-local-background-color-filled--disabled;
+// Binary Input elements (Checkboxes, Radios, Toggle Switches)
+	@-local-background-color-input-binary--active: @color-primary--active;
+	--wmui-background-color-input-binary--active: @-local-background-color-input-binary--active;
+	@-local-background-color-input-binary--checked: @color-primary;
+	--wmui-background-color-input-binary--checked: @-local-background-color-input-binary--checked;
+// Quiet Buttons
+	@-local-background-color-quiet: @background-color-base;
+	--wmui-background-color-quiet: @-local-background-color-quiet;
+// Use `rgba()` values here as the quiet buttons need to blend in with background.
+	@-local-background-color-quiet--hover: rgba( 0, 24, 73, ( 7 / 255 ) );
+	--wmui-background-color-quiet--hover: @-local-background-color-quiet--hover; // = `@wmui-color-base90` on white.
+	@-local-background-color-quiet--active: rgba( 0, 24, 73, ( 21 / 255 ) );
+	--wmui-background-color-quiet--active: @-local-background-color-quiet--active; // = `@wmui-color-base80` on white.
+// Toolbar and Tools
+	@-local-background-color-toolbar: @background-color-base;
+	--wmui-background-color-toolbar: @-local-background-color-toolbar;
+	@-local-background-color-tool--hover: @background-color-base--hover;
+	--wmui-background-color-tool--hover: @-local-background-color-tool--hover;
+	@-local-background-color-tool--active: @background-color-primary;
+	--wmui-background-color-tool--active: @-local-background-color-tool--active;
+	@-local-background-color-tool--active-hover: @background-color-primary--hover;
+	--wmui-background-color-tool--active-hover: @-local-background-color-tool--active-hover;
+// Tabs Navigation Background Color
+	@-local-background-color-tabs: @wmui-color-base80;
+	--wmui-background-color-tabs: @-local-background-color-tabs;
+// User system messages (errors, warnings, successes, notices)
+	@-local-background-color-error--framed: @wmui-color-red90;
+	--wmui-background-color-error--framed: @-local-background-color-error--framed;
+	@-local-background-color-warning--framed: @wmui-color-yellow90;
+	--wmui-background-color-warning--framed: @-local-background-color-warning--framed;
+	@-local-background-color-success--framed: @wmui-color-green90;
+	--wmui-background-color-success--framed: @-local-background-color-success--framed;
+	@-local-background-color-notice--framed: @wmui-color-base80;
+	--wmui-background-color-notice--framed: @-local-background-color-notice--framed;
+// Highlight Colors for text highlighting, think metaphorically text marker
+	@-local-background-color-highlight: rgba( 255, 182, 13, 0.4 );
+	--wmui-background-color-highlight: @-local-background-color-highlight; // Equals to `#ffe29e` on `#fff` background.
+
+// Foreground Colors
+	@-local-color-base: @wmui-color-base10;
+	--wmui-color-base: @-local-color-base;
+	@-local-color-base--hover: @wmui-color-base10--lighten;
+	--wmui-color-base--hover: @-local-color-base--hover;
+	@-local-color-base--active: @wmui-color-base0;
+	--wmui-color-base--active: @-local-color-base--active;
+	@-local-color-base--inverted: @wmui-color-base100;
+	--wmui-color-base--inverted: @-local-color-base--inverted;
+	@-local-color-base--emphasized: @wmui-color-base0;
+	--wmui-color-base--emphasized: @-local-color-base--emphasized;
+	@-local-color-base--subtle: @wmui-color-base30;
+	--wmui-color-base--subtle: @-local-color-base--subtle;
+	@-local-color-base--disabled: @wmui-color-base30;
+	--wmui-color-base--disabled: @-local-color-base--disabled;
+	@-local-color-filled--disabled: @color-base--inverted;
+	--wmui-color-filled--disabled: @-local-color-filled--disabled;
+	@-local-color-accessory: @wmui-color-base20;
+	--wmui-color-accessory: @-local-color-accessory;
+	@-local-color-placeholder: @wmui-color-base30;
+	--wmui-color-placeholder: @-local-color-placeholder;
+// Primary 'Progressive' Color, Background Color and states
+	@-local-background-color-primary: @wmui-color-accent90;
+	--wmui-background-color-primary: @-local-background-color-primary;
+	@-local-background-color-primary--hover: rgba( 41, 98, 204, 0.1 );
+	--wmui-background-color-primary--hover: @-local-background-color-primary--hover;
+	@-local-color-primary: @wmui-color-accent50;
+	--wmui-color-primary: @-local-color-primary;
+	@-local-color-primary--hover: @wmui-color-accent50--lighten;
+	--wmui-color-primary--hover: @-local-color-primary--hover;
+	@-expanded-color-primary--active: @-local-wmui-color-accent30;
+	@-local-color-primary--active: @wmui-color-accent30;
+	--wmui-color-primary--active: @-local-color-primary--active;
+	@-local-color-primary--focus: @color-primary;
+	--wmui-color-primary--focus: @-local-color-primary--focus;
+// 'Destructive' Color, Background Color and states
+	@-local-background-color-destructive: @wmui-color-red90;
+	--wmui-background-color-destructive: @-local-background-color-destructive;
+	@-local-color-destructive: @wmui-color-red50;
+	--wmui-color-destructive: @-local-color-destructive;
+	@-local-color-destructive--hover: @wmui-color-red50--lighten;
+	--wmui-color-destructive--hover: @-local-color-destructive--hover;
+	@-local-color-destructive--active: @wmui-color-red30;
+	--wmui-color-destructive--active: @-local-color-destructive--active;
+	@-local-color-destructive--focus: @color-destructive;
+	--wmui-color-destructive--focus: @-local-color-destructive--focus;
+// Secondary Color and states (links only)
+	@-local-color-secondary: @wmui-color-green50;
+	--wmui-color-secondary: @-local-color-secondary;
+	@-local-color-secondary--hover: @wmui-color-green50--lighten;
+	--wmui-color-secondary--hover: @-local-color-secondary--hover;
+	@-local-color-secondary--active: @wmui-color-green30;
+	--wmui-color-secondary--active: @-local-color-secondary--active;
+	@-local-color-secondary--focus: @color-secondary;
+	--wmui-color-secondary--focus: @-local-color-secondary--focus;
+// User system messages (errors, warnings, successes, notices)
+	@-local-color-error: @wmui-color-red50;
+	--wmui-color-error: @-local-color-error;
+	@-local-color-warning: @wmui-color-base0;
+	--wmui-color-warning: @-local-color-warning;
+	@-local-color-success: @wmui-color-green30;
+	--wmui-color-success: @-local-color-success;
+	@-local-color-success--framed: @wmui-color-base0;
+	--wmui-color-success--framed: @-local-color-success--framed;
+	@-local-color-notice: @wmui-color-base0;
+	--wmui-color-notice: @-local-color-notice;
+// Toolbar and Tools
+	@-local-color-tool--hover: @color-base--emphasized;
+	--wmui-color-tool--hover: @-local-color-tool--hover; // Used here in combination with `:hover` background-color turning light grey
+	@-local-color-tool--active: @color-primary;
+	--wmui-color-tool--active: @-local-color-tool--active;
+
+// Border
+	@-local-border-color-dialog: @border-color-base;
+	--wmui-border-color-dialog: @-local-border-color-dialog;
+	@-local-border-color-menu: @border-color-base;
+	--wmui-border-color-menu: @-local-border-color-menu;
+// User system messages (errors, warnings, successes, notices)
+	@-local-border-color-notice: @border-color-base;
+	--wmui-border-color-notice: @-local-border-color-notice;
+// Border Colors
+	@-local-border-color-base: @wmui-color-base50;
+	--wmui-border-color-base: @-local-border-color-base;
+	@-local-border-color-base--darken14: darken( @-local-wmui-color-base50, 14% );
+	--wmui-border-color-base--darken14: @-local-border-color-base--darken14;
+	@-local-border-color-base--hover: @wmui-color-base50;
+	--wmui-border-color-base--hover: @-local-border-color-base--hover;
+	@-local-border-color-base--active: @wmui-color-base30;
+	--wmui-border-color-base--active: @-local-border-color-base--active;
+	@-local-border-color-base--focus: @color-primary--focus;
+	--wmui-border-color-base--focus: @-local-border-color-base--focus;
+	@-local-border-color-base--disabled: @wmui-color-base70;
+	--wmui-border-color-base--disabled: @-local-border-color-base--disabled;
+
+	@-local-border-color-filled--disabled: @color-filled--disabled;
+	--wmui-border-color-filled--disabled: @-local-border-color-filled--disabled;
+// Border Colors primary buttons
+	@-local-border-color-primary: @color-primary;
+	--wmui-border-color-primary: @-local-border-color-primary;
+	@-local-border-color-primary--hover: @color-primary--hover;
+	--wmui-border-color-primary--hover: @-local-border-color-primary--hover;
+	@-local-border-color-primary--active: @color-primary--active;
+	--wmui-border-color-primary--active: @-local-border-color-primary--active;
+	@-local-border-color-primary--focus: @border-color-primary;
+	--wmui-border-color-primary--focus: @-local-border-color-primary--focus;
+	@-local-border-color-destructive: @color-destructive;
+	--wmui-border-color-destructive: @-local-border-color-destructive;
+	@-local-border-color-destructive--hover: @color-destructive--hover;
+	--wmui-border-color-destructive--hover: @-local-border-color-destructive--hover;
+	@-local-border-color-destructive--active: @color-destructive--active;
+	--wmui-border-color-destructive--active: @-local-border-color-destructive--active;
+	@-local-border-color-destructive--focus: @border-color-destructive;
+	--wmui-border-color-destructive--focus: @-local-border-color-destructive--focus;
+	@-local-border-color-inset--focus: @color-base--inverted;
+	--wmui-border-color-inset--focus: @-local-border-color-inset--focus;
+	@-local-border-color-input--hover: @border-color-base--active;
+	--wmui-border-color-input--hover: @-local-border-color-input--hover;
+	@-local-border-color-input-binary: @border-color-base--active;
+	--wmui-border-color-input-binary: @-local-border-color-input-binary;
+	@-local-border-color-input-binary--active: @color-primary--active;
+	--wmui-border-color-input-binary--active: @-local-border-color-input-binary--active;
+	@-local-border-color-input-binary--checked: @color-primary;
+	--wmui-border-color-input-binary--checked: @-local-border-color-input-binary--checked;
+	@-local-border-color-heading: @wmui-color-base70;
+	--wmui-border-color-heading: @-local-border-color-heading;
+	@-local-border-color-divider: @wmui-color-base50;
+	--wmui-border-color-divider: @-local-border-color-divider;
+	@-local-border-color-wikitable: rgba( 84, 89, 93, 0.3 );
+	--wmui-border-color-wikitable: @-local-border-color-wikitable; // See T168029
+// Border Colors user system messages
+	@-local-border-color-error: @wmui-color-red30;
+	--wmui-border-color-error: @-local-border-color-error;
+	@-local-border-color-warning: @wmui-color-yellow30;
+	--wmui-border-color-warning: @-local-border-color-warning;
+	@-local-border-color-success: @wmui-color-green700;
+	--wmui-border-color-success: @-local-border-color-success;
+	@-local-border-color-notice: @wmui-color-base20;
+	--wmui-border-color-notice: @-local-border-color-notice;
+// Border Widths
+	@-local-border-width-base: 1px;
+	--wmui-border-width-base: @-local-border-width-base;
+
+// Box Shadows
+// Base `box-shadow` set to `transparent` for transition purpose.
+	@-local-box-shadow-base: inset 0 0 0 1px transparent;
+	--wmui-box-shadow-base: @-local-box-shadow-base;
+	@-local-box-shadow-base--focus: inset 0 0 0 1px @wmui-color-accent50;
+	--wmui-box-shadow-base--focus: @-local-box-shadow-base--focus;
+	@-local-box-shadow-primary--focus: inset 0 0 0 1px @color-primary, inset 0 0 0 2px @color-base--inverted;
+	--wmui-box-shadow-primary--focus: @-local-box-shadow-primary--focus;
+	@-local-box-shadow-destructive--focus: inset 0 0 0 1px @color-destructive, inset 0 0 0 2px @color-base--inverted;
+	--wmui-box-shadow-destructive--focus: @-local-box-shadow-destructive--focus;
+	@-local-box-shadow-filled--disabled: inset 0 0 0 1px @color-filled--disabled;
+	--wmui-box-shadow-filled--disabled: @-local-box-shadow-filled--disabled;
+	@-local-box-shadow-card: 0 1px 1px rgba( 0, 0, 0, 0.15 );
+	--wmui-box-shadow-card: @-local-box-shadow-card;
+	@-local-box-shadow-dialog: 0 2px 2px 0 rgba( 0, 0, 0, 0.25 );
+	--wmui-box-shadow-dialog: @-local-box-shadow-dialog;
+	@-local-box-shadow-menu: @box-shadow-dialog;
+	--wmui-box-shadow-menu: @-local-box-shadow-menu;
+
+// Outlines
+// Enable Windows high contrast mode on certain widgets, that have default outlines overridden.
+	@-local-outline-color-base--focus: transparent;
+	--wmui-outline-color-base--focus: @-local-outline-color-base--focus;
+
+// Text Shadows
+	@-local-text-shadow-base: 0 1px 1px @color-base--inverted;
+	--wmui-text-shadow-base: @-local-text-shadow-base; // 'coined' effect
+	@-local-text-shadow-base--disabled: @text-shadow-base;
+	--wmui-text-shadow-base--disabled: @-local-text-shadow-base--disabled;
+
+// Background & Text Colors
+	@-local-background-color-base--active: @wmui-color-base80;
+	--wmui-background-color-base--active: @-local-background-color-base--active;
+	@-local-background-color-frameless--hover: @background-color-quiet--hover;
+	--wmui-background-color-frameless--hover: @-local-background-color-frameless--hover;
+	@-local-background-color-frameless--active: @background-color-quiet--active;
+	--wmui-background-color-frameless--active: @-local-background-color-frameless--active;
+	@-local-background-color-pending-stripe: @wmui-color-base80;
+	--wmui-background-color-pending-stripe: @-local-background-color-pending-stripe;
+// Backdrop is the term used by CSS Fullscreen API and is used to dim the background when a modal Dialog is open. Also known as overlay mask.
+	@-local-background-color-backdrop-light: rgba( 255, 255, 255, 0.65 );
+	--wmui-background-color-backdrop-light: @-local-background-color-backdrop-light;
+	@-local-color-base--deemphasized: @wmui-color-base20;
+	--wmui-color-base--deemphasized: @-local-color-base--deemphasized;
+	@-local-color-taboption: @color-base--hover;
+	--wmui-color-taboption: @-local-color-taboption;
+
+// Primary 'Progressive' and 'Destructive' Colors
+	@-local-color-destructive-non-primary: #d73333;
+	--wmui-color-destructive-non-primary: @-local-color-destructive-non-primary; // Exemption for non-primary buttons, foremost used in VE, lightened up R50 to align to AA contrast ratio
+
+	@-local-border-color-framed-progressive--hover: @color-primary--hover;
+	--wmui-border-color-framed-progressive--hover: @-local-border-color-framed-progressive--hover;
+	@-local-border-color-framed-destructive--hover: @color-destructive--hover;
+	--wmui-border-color-framed-destructive--hover: @-local-border-color-framed-destructive--hover;
+	@-local-border-color-frameless: transparent;
+	--wmui-border-color-frameless: @-local-border-color-frameless;
+
+	@-local-border-color-focus-inset: @color-base--inverted;
+	--wmui-border-color-focus-inset: @-local-border-color-focus-inset;
+	@-local-border-color-dialog-bar: @wmui-color-base70;
+	--wmui-border-color-dialog-bar: @-local-border-color-dialog-bar;
+
+	@-local-border-width-frameless-tab: 2px;
+	--wmui-border-width-frameless-tab: @-local-border-width-frameless-tab;
+
+	@-local-border-color-toolbar: @wmui-color-base70;
+	--wmui-border-color-toolbar: @-local-border-color-toolbar;
+	@-local-border-color-toolgroup: @wmui-color-base80;
+	--wmui-border-color-toolgroup: @-local-border-color-toolgroup;
+
+	@-local-box-shadow-toolbar-top: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
+	--wmui-box-shadow-toolbar-top: @-local-box-shadow-toolbar-top;
+	@-local-box-shadow-toolbar-bottom: 0 -1px 1px 0 rgba( 0, 0, 0, 0.1 );
+	--wmui-box-shadow-toolbar-bottom: @-local-box-shadow-toolbar-bottom;
+	@-local-box-shadow-progressbar: @box-shadow-card;
+	--wmui-box-shadow-progressbar: @-local-box-shadow-progressbar;
+	@-local-box-shadow-progressive-filled--focus: inset 0 0 0 1px @color-primary, inset 0 0 0 2px @color-base--inverted;
+	--wmui-box-shadow-progressive-filled--focus: @-local-box-shadow-progressive-filled--focus;
+	@-local-box-shadow-frameless-indicator--focus: 0 0 0 2px @color-primary;
+	--wmui-box-shadow-frameless-indicator--focus: @-local-box-shadow-frameless-indicator--focus;
+	@-local-box-shadow-action--focus: @box-shadow-base--focus, 0 0 0 1px @color-primary;
+	--wmui-box-shadow-action--focus: @-local-box-shadow-action--focus;
+	@-local-box-shadow-toolbar-action-button--focus: inset 0 0 0 2px @color-primary, inset 0 0 0 3px @color-base--inverted;
+	--wmui-box-shadow-toolbar-action-button--focus: @-local-box-shadow-toolbar-action-button--focus;
+	@-local-box-shadow-popuptoolgroup-tool--focus: inset 0 0 0 2px @color-primary--focus;
+	--wmui-box-shadow-popuptoolgroup-tool--focus: @-local-box-shadow-popuptoolgroup-tool--focus;
+	@-local-box-shadow-input-binary--active: inset 0 0 0 1px @color-primary--active;
+	--wmui-box-shadow-input-binary--active: @-local-box-shadow-input-binary--active;
+	@-local-box-shadow-error--focus: inset 0 0 0 1px @color-error;
+	--wmui-box-shadow-error--focus: @-local-box-shadow-error--focus;
+
+	@-local-filter-drop-shadow-menu: drop-shadow( 0 2px 1px rgba( 0, 0, 0, 0.3 ) );
+	--wmui-filter-drop-shadow-menu: @-local-filter-drop-shadow-menu;
+
+// Binary Input Widgets (CheckboxInput, RadioInput, ToggleSwitch)
+	@-local-background-color-input-binary--active: @color-primary--active;
+	--wmui-background-color-input-binary--active: @-local-background-color-input-binary--active;
+	@-local-background-color-input-binary--checked: @color-primary;
+	--wmui-background-color-input-binary--checked: @-local-background-color-input-binary--checked;
+	@-local-border-color-input-binary: @border-color-base--active;
+	--wmui-border-color-input-binary: @-local-border-color-input-binary;
+	@-local-border-color-input-binary--active: @color-primary--active;
+	--wmui-border-color-input-binary--active: @-local-border-color-input-binary--active;
+	@-local-border-color-input-binary--checked: @color-primary;
+	--wmui-border-color-input-binary--checked: @-local-border-color-input-binary--checked;
+	@-local-border-width-radio--checked: 6px;
+	--wmui-border-width-radio--checked: @-local-border-width-radio--checked;
+
+	@-local-background-color-filled--primary-disabled: mix( @-expanded-color-primary--active, @-expanded-background-color-filled--disabled, 35% );
+	--wmui-background-color-filled--primary-disabled: @-local-background-color-filled--primary-disabled;
+}
+
+
+@wmui-color-base0: var( --wmui-color-base0 );
+@wmui-color-base10: var( --wmui-color-base10 );
+@wmui-color-base20: var( --wmui-color-base20 );
+@wmui-color-base30: var( --wmui-color-base30 );
+@wmui-color-base50: var( --wmui-color-base50 );
+@wmui-color-base70: var( --wmui-color-base70 );
+@wmui-color-base80: var( --wmui-color-base80 );
+@wmui-color-base90: var( --wmui-color-base90 );
+@wmui-color-base100: var( --wmui-color-base100 );
+@wmui-color-accent30: var( --wmui-color-accent30 );
+@wmui-color-accent50: var( --wmui-color-accent50 );
+@wmui-color-accent90: var( --wmui-color-accent90 );
+@wmui-color-red30: var( --wmui-color-red30 );
+@wmui-color-red50: var( --wmui-color-red50 );
+@wmui-color-red90: var( --wmui-color-red90 );
+@wmui-color-yellow30: var( --wmui-color-yellow30 );
+@wmui-color-yellow50: var( --wmui-color-yellow50 );
+@wmui-color-yellow90: var( --wmui-color-yellow90 );
+@wmui-color-green30: var( --wmui-color-green30 );
+@wmui-color-green50: var( --wmui-color-green50 );
+@wmui-color-green90: var( --wmui-color-green90 );
+@wmui-color-green700: var( --wmui-color-green700 );
+@wmui-color-base10--lighten: var( --wmui-color-base10--lighten );
+@wmui-color-accent50--lighten: var( --wmui-color-accent50--lighten );
+@wmui-color-red50--lighten: var( --wmui-color-red50--lighten );
+@wmui-color-green50--lighten: var( --wmui-color-green50--lighten );
+@wmui-color-purple50: var( --wmui-color-purple50 );
+@background-color-base: var( --wmui-background-color-base );
+@background-color-base--hover: var( --wmui-background-color-base--hover );
+@background-color-base--disabled: var( --wmui-background-color-base--disabled );
+@background-color-base--read-only: var( --wmui-background-color-base--read-only );
+@background-color-code: var( --wmui-background-color-code );
+@background-color-framed: var( --wmui-background-color-framed );
+@background-color-framed--hover: var( --wmui-background-color-framed--hover );
+@background-color-framed--active: var( --wmui-background-color-framed--active );
+@background-color-filled--disabled: var( --wmui-background-color-filled--disabled );
+@background-color-input-binary--active: var( --wmui-background-color-input-binary--active );
+@background-color-input-binary--checked: var( --wmui-background-color-input-binary--checked );
+@background-color-quiet: var( --wmui-background-color-quiet );
+@background-color-quiet--hover: var( --wmui-background-color-quiet--hover );
+@background-color-quiet--active: var( --wmui-background-color-quiet--active );
+@background-color-toolbar: var( --wmui-background-color-toolbar );
+@background-color-tool--hover: var( --wmui-background-color-tool--hover );
+@background-color-tool--active: var( --wmui-background-color-tool--active );
+@background-color-tool--active-hover: var( --wmui-background-color-tool--active-hover );
+@background-color-tabs: var( --wmui-background-color-tabs );
+@background-color-error--framed: var( --wmui-background-color-error--framed );
+@background-color-warning--framed: var( --wmui-background-color-warning--framed );
+@background-color-success--framed: var( --wmui-background-color-success--framed );
+@background-color-notice--framed: var( --wmui-background-color-notice--framed );
+@background-color-highlight: var( --wmui-background-color-highlight );
+@color-base: var( --wmui-color-base );
+@color-base--hover: var( --wmui-color-base--hover );
+@color-base--active: var( --wmui-color-base--active );
+@color-base--inverted: var( --wmui-color-base--inverted );
+@color-base--emphasized: var( --wmui-color-base--emphasized );
+@color-base--subtle: var( --wmui-color-base--subtle );
+@color-base--disabled: var( --wmui-color-base--disabled );
+@color-filled--disabled: var( --wmui-color-filled--disabled );
+@color-accessory: var( --wmui-color-accessory );
+@color-placeholder: var( --wmui-color-placeholder );
+@background-color-primary: var( --wmui-background-color-primary );
+@background-color-primary--hover: var( --wmui-background-color-primary--hover );
+@color-primary: var( --wmui-color-primary );
+@color-primary--hover: var( --wmui-color-primary--hover );
+@color-primary--active: var( --wmui-color-primary--active );
+@color-primary--focus: var( --wmui-color-primary--focus );
+@background-color-destructive: var( --wmui-background-color-destructive );
+@color-destructive: var( --wmui-color-destructive );
+@color-destructive--hover: var( --wmui-color-destructive--hover );
+@color-destructive--active: var( --wmui-color-destructive--active );
+@color-destructive--focus: var( --wmui-color-destructive--focus );
+@color-secondary: var( --wmui-color-secondary );
+@color-secondary--hover: var( --wmui-color-secondary--hover );
+@color-secondary--active: var( --wmui-color-secondary--active );
+@color-secondary--focus: var( --wmui-color-secondary--focus );
+@color-error: var( --wmui-color-error );
+@color-warning: var( --wmui-color-warning );
+@color-success: var( --wmui-color-success );
+@color-success--framed: var( --wmui-color-success--framed );
+@color-notice: var( --wmui-color-notice );
+@color-tool--hover: var( --wmui-color-tool--hover );
+@color-tool--active: var( --wmui-color-tool--active );
+@border-color-dialog: var( --wmui-border-color-dialog );
+@border-color-menu: var( --wmui-border-color-menu );
+@border-color-notice: var( --wmui-border-color-notice );
+@border-color-base: var( --wmui-border-color-base );
+@border-color-base--darken14: var( --wmui-border-color-base--darken14 );
+@border-color-base--hover: var( --wmui-border-color-base--hover );
+@border-color-base--active: var( --wmui-border-color-base--active );
+@border-color-base--focus: var( --wmui-border-color-base--focus );
+@border-color-base--disabled: var( --wmui-border-color-base--disabled );
+@border-color-filled--disabled: var( --wmui-border-color-filled--disabled );
+@border-color-primary: var( --wmui-border-color-primary );
+@border-color-primary--hover: var( --wmui-border-color-primary--hover );
+@border-color-primary--active: var( --wmui-border-color-primary--active );
+@border-color-primary--focus: var( --wmui-border-color-primary--focus );
+@border-color-destructive: var( --wmui-border-color-destructive );
+@border-color-destructive--hover: var( --wmui-border-color-destructive--hover );
+@border-color-destructive--active: var( --wmui-border-color-destructive--active );
+@border-color-destructive--focus: var( --wmui-border-color-destructive--focus );
+@border-color-inset--focus: var( --wmui-border-color-inset--focus );
+@border-color-input--hover: var( --wmui-border-color-input--hover );
+@border-color-input-binary: var( --wmui-border-color-input-binary );
+@border-color-input-binary--active: var( --wmui-border-color-input-binary--active );
+@border-color-input-binary--checked: var( --wmui-border-color-input-binary--checked );
+@border-color-heading: var( --wmui-border-color-heading );
+@border-color-divider: var( --wmui-border-color-divider );
+@border-color-wikitable: var( --wmui-border-color-wikitable );
+@border-color-error: var( --wmui-border-color-error );
+@border-color-warning: var( --wmui-border-color-warning );
+@border-color-success: var( --wmui-border-color-success );
+@border-color-notice: var( --wmui-border-color-notice );
+@border-width-base: var( --wmui-border-width-base );
+@box-shadow-base: var( --wmui-box-shadow-base );
+@box-shadow-base--focus: var( --wmui-box-shadow-base--focus );
+@box-shadow-primary--focus: var( --wmui-box-shadow-primary--focus );
+@box-shadow-destructive--focus: var( --wmui-box-shadow-destructive--focus );
+@box-shadow-filled--disabled: var( --wmui-box-shadow-filled--disabled );
+@box-shadow-card: var( --wmui-box-shadow-card );
+@box-shadow-dialog: var( --wmui-box-shadow-dialog );
+@box-shadow-menu: var( --wmui-box-shadow-menu );
+@outline-color-base--focus: var( --wmui-outline-color-base--focus );
+@text-shadow-base: var( --wmui-text-shadow-base );
+@text-shadow-base--disabled: var( --wmui-text-shadow-base--disabled );
+@background-color-base--active: var( --wmui-background-color-base--active );
+@background-color-frameless--hover: var( --wmui-background-color-frameless--hover );
+@background-color-frameless--active: var( --wmui-background-color-frameless--active );
+@background-color-pending-stripe: var( --wmui-background-color-pending-stripe );
+@background-color-backdrop-light: var( --wmui-background-color-backdrop-light );
+@color-base--deemphasized: var( --wmui-color-base--deemphasized );
+@color-taboption: var( --wmui-color-taboption );
+@color-destructive-non-primary: var( --wmui-color-destructive-non-primary );
+@border-color-framed-progressive--hover: var( --wmui-border-color-framed-progressive--hover );
+@border-color-framed-destructive--hover: var( --wmui-border-color-framed-destructive--hover );
+@border-color-frameless: var( --wmui-border-color-frameless );
+@border-color-focus-inset: var( --wmui-border-color-focus-inset );
+@border-color-dialog-bar: var( --wmui-border-color-dialog-bar );
+@border-width-frameless-tab: var( --wmui-border-width-frameless-tab );
+@border-color-toolbar: var( --wmui-border-color-toolbar );
+@border-color-toolgroup: var( --wmui-border-color-toolgroup );
+@box-shadow-toolbar-top: var( --wmui-box-shadow-toolbar-top );
+@box-shadow-toolbar-bottom: var( --wmui-box-shadow-toolbar-bottom );
+@box-shadow-progressbar: var( --wmui-box-shadow-progressbar );
+@box-shadow-progressive-filled--focus: var( --wmui-box-shadow-progressive-filled--focus );
+@box-shadow-frameless-indicator--focus: var( --wmui-box-shadow-frameless-indicator--focus );
+@box-shadow-action--focus: var( --wmui-box-shadow-action--focus );
+@box-shadow-toolbar-action-button--focus: var( --wmui-box-shadow-toolbar-action-button--focus );
+@box-shadow-popuptoolgroup-tool--focus: var( --wmui-box-shadow-popuptoolgroup-tool--focus );
+@box-shadow-input-binary--active: var( --wmui-box-shadow-input-binary--active );
+@box-shadow-error--focus: var( --wmui-box-shadow-error--focus );
+@filter-drop-shadow-menu: var( --wmui-filter-drop-shadow-menu );
+@background-color-input-binary--active: var( --wmui-background-color-input-binary--active );
+@background-color-input-binary--checked: var( --wmui-background-color-input-binary--checked );
+@border-color-input-binary: var( --wmui-border-color-input-binary );
+@border-color-input-binary--active: var( --wmui-border-color-input-binary--active );
+@border-color-input-binary--checked: var( --wmui-border-color-input-binary--checked );
+@border-width-radio--checked: var( --wmui-border-width-radio--checked );
+@background-color-filled--primary-disabled: var( --wmui-background-color-filled--primary-disabled );

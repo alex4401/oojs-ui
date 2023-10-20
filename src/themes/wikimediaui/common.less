@@ -5,57 +5,7 @@
 // Pull in the main set of variables from the shared UI base
 // * Reaching into node_modules like this to avoid a symlink that Windows users won't like
 // * Use LESS "reference" import to avoid including the '/**' comment at the top of the file
-@import ( reference ) './wmuivars.less';
-
-// Background & Text Colors
-@background-color-base--active: var( --wmui-background-color-base--active );
-@background-color-frameless--hover: var( --wmui-background-color-frameless--hover );
-@background-color-frameless--active: var( --wmui-background-color-frameless--active );
-@background-color-pending-stripe: var( --wmui-background-color-pending-stripe );
-// Backdrop is the term used by CSS Fullscreen API and is used to dim the background when a modal Dialog is open. Also known as overlay mask.
-@background-color-backdrop-light: var( --wmui-background-color-backdrop-light );
-@color-base--deemphasized: var( --wmui-color-base--deemphasized );
-@color-taboption: var( --wmui-color-taboption );
-
-// Primary 'Progressive' and 'Destructive' Colors
-@color-destructive-non-primary: var( --wmui-color-destructive-non-primary ); // Exemption for non-primary buttons, foremost used in VE, lightened up R50 to align to AA contrast ratio
-
-@border-color-base--darken14: var( --wmui-border-color-base--darken14 );
-
-@border-color-dialog: var( --wmui-border-color-dialog );
-@border-color-menu: var( --wmui-border-color-menu );
-
-@border-color-framed-progressive--hover: var( --wmui-border-color-framed-progressive--hover );
-@border-color-framed-destructive--hover: var( --wmui-border-color-framed-destructive--hover );
-@border-color-frameless: var( --wmui-border-color-frameless );
-
-@border-color-focus-inset: var( --wmui-border-color-focus-inset );
-@border-color-dialog-bar: var( --wmui-border-color-dialog-bar );
-
-@border-width-frameless-tab: var( --wmui-border-width-frameless-tab );
-
-@border-color-toolbar: var( --wmui-border-color-toolbar );
-@border-color-toolgroup: var( --wmui-border-color-toolgroup );
-
-@box-shadow-toolbar-top: var( --wmui-box-shadow-toolbar-top );
-@box-shadow-toolbar-bottom: var( --wmui-box-shadow-toolbar-bottom );
-@box-shadow-progressbar: var( --wmui-box-shadow-progressbar );
-@box-shadow-progressive-filled--focus: var( --wmui-box-shadow-progressive-filled--focus );
-@box-shadow-frameless-indicator--focus: var( --wmui-box-shadow-frameless-indicator--focus );
-@box-shadow-action--focus: var( --wmui-box-shadow-action--focus );
-@box-shadow-toolbar-action-button--focus: var( --wmui-box-shadow-toolbar-action-button--focus );
-@box-shadow-popuptoolgroup-tool--focus: var( --wmui-box-shadow-popuptoolgroup-tool--focus );
-@box-shadow-input-binary--active: var( --wmui-box-shadow-input-binary--active );
-@box-shadow-error--focus: var( --wmui-box-shadow-error--focus );
-
-@filter-drop-shadow-menu: var( --wmui-filter-drop-shadow-menu );
-
-// Binary Input Widgets (CheckboxInput, RadioInput, ToggleSwitch)
-@background-color-input-binary--active: var( --wmui-background-color-input-binary--active );
-@background-color-input-binary--checked: var( --wmui-background-color-input-binary--checked );
-@border-color-input-binary: var( --wmui-border-color-input-binary );
-@border-color-input-binary--active: var( --wmui-border-color-input-binary--active );
-@border-color-input-binary--checked: var( --wmui-border-color-input-binary--checked );
+@import ( reference ) './_wikimedia-ui-base.less';
 
 // Theme mixins
 
@@ -90,14 +40,14 @@
 		border-color: @focus;
 		box-shadow: inset 0 0 0 1px @focus;
 		// In Windows high contrast mode the outline becomes visible.
-		outline: @outline-base--focus;
+		outline-color: @outline-color-base--focus;
 	}
 
 	> @{child}:active,
 	&.oo-ui-buttonElement-pressed > @{child},
 	&.oo-ui-buttonElement-active > @{child},
 	&.oo-ui-popupToolGroup-active > @{child} {
-		background-color: lighten( @active, 60% );
+		background-color: #a0a;//lighten( @active, 60% );
 		color: @active;
 		border-color: @active;
 		box-shadow: none;
@@ -120,7 +70,7 @@
 		border-color: @focus;
 		box-shadow: inset 0 0 0 1px @focus, inset 0 0 0 2px @color-base--inverted;
 		// In Windows high contrast mode the outline becomes visible.
-		outline: @outline-base--focus;
+		outline-color: @outline-color-base--focus;
 	}
 
 	> @{child}:active,
@@ -152,7 +102,7 @@
 	> @{child}:active,
 	&.oo-ui-tool-active > @{child},
 	&.oo-ui-popupToolGroup-active > @{child} {
-		background-color: lighten( @active, 60% );
+		background-color: #a0a; //lighten( @active, 60% );
 		color: @active-text;
 		box-shadow: none;
 	}
